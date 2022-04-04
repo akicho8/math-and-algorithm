@@ -1,1 +1,3 @@
-p 1
+# [004] Product of 3 Integers
+# https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_d
+p gets.split.map(&:to_i).inject(:*)
