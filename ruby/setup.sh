@@ -34,9 +34,9 @@
 # rm -fr math-and-algorithm
 # acc new math-and-algorithm
 
-cd math-and-algorithm/001
-echo "p gets.to_i + 5" > main.rb
-oj t -c "ruby main.rb"
+# cd math-and-algorithm/001
+# echo "p gets.to_i + 5" > main.rb
+# oj t -c "ruby main.rb"
 # oj t -c "ruby main.rb" -d tests
 # acc s main.rb
 #
