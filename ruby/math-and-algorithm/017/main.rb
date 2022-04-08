@@ -1,13 +1,18 @@
-# $stdin = DATA
-# a = gets.to_i
-# b, c = gets.split.map(&:to_i)
-# s = gets.strip
-# puts "#{a+b+c} #{s}"
-# __END__
-# 1
-# 2 3
-# 6
-# 
+# [017] Least Common Multiple of N Integers
+# https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_q
+
+gcd = -> a, b {
+  if a.zero?
+    b
+  else
+    gcd.(b.modulo(a), a)
+  end
+}
+
+lcm = -> a, b {
+  a * b / gcd.(a, b)
+}
+
 n = gets.to_i
-p gets.split.take(n).collect(&:to_i).sum
-# >> 0
+a = gets.split.take(n).collect(&:to_i)
+p a.inject {|a, e| lcm.(a, e) }
