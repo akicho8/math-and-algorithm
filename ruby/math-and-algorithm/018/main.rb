@@ -1,13 +1,18 @@
+# [018] Convenience Store 1
+# https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_r
+#
+# - 100 + 400 と 200 + 300 の組み合わせだけが 500 になる
+# - 何通りかは a * b なので
+# - 100円の商品の個数 * 400円の商品の個数
+# - 200円の商品の個数 * 300円の商品の個数
+# - この合計で何通りあるかわかる
+#
 # $stdin = DATA
-# a = gets.to_i
-# b, c = gets.split.map(&:to_i)
-# s = gets.strip
-# puts "#{a+b+c} #{s}"
-# __END__
-# 1
-# 2 3
-# 6
-# 
 n = gets.to_i
-p gets.split.take(n).collect(&:to_i).sum
-# >> 0
+a = gets.split.take(n).collect(&:to_i)
+c = Hash.new(0).merge(a.tally)
+p c[100] * c[400] + c[200] * c[300]
+__END__
+5
+100 300 400 400 200
+# >> 6
